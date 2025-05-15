@@ -12,7 +12,8 @@ const app = express();
 app.use(cors({
   origin: "https://auth-front-865y.onrender.com/", // Removed trailing slash
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Added OPTIONS
-  credentials: true
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
 app.use(bodyParser.json());
 
@@ -30,6 +31,8 @@ const User = mongoose.model('User', new mongoose.Schema({
 
 // JWT secret
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
+
+
 
 // Routes
 app.get('/', (req, res) => {
