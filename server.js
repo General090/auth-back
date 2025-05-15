@@ -10,7 +10,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "https://auth-front-865y.onrender.com", // Removed trailing slash
+  origin: "https://auth-front-865y.onrender.com/", // Removed trailing slash
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Added OPTIONS
   credentials: true
 }));
